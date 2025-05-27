@@ -2,7 +2,7 @@ import { defineConfig } from 'vite';
 import path from 'path';
 
 export default defineConfig({
-  root: path.resolve(__dirname, 'cybersafe_therapy'),
+  root: '.',
   base: './',
   build: {
     outDir: path.resolve(__dirname, 'cybersafe_therapy/dist'),
