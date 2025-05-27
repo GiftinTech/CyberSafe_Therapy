@@ -34,9 +34,11 @@
 // };
 // run();
 
-import { GoogleGenAI } from '@google/genai';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
-const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
+const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+
+const model = genAI.getGenerativeModel({ model: 'gemini-1.5-flash' });
 
 const textarea = document.querySelector('.js-user-input') as HTMLInputElement;
 
@@ -73,16 +75,10 @@ function loadHistory() {
       messages.history = [];
     }
   }
-  // If no history, add welcome message
-  if (messages.history.length === 0) {
-    messages.history.push({
-      role: 'model',
-      parts: [
-        { text: "Hello! I'm your AI therapist. How can I help you feel safer online today?" },
-      ],
-    });
-    saveHistory();
-  }
+
+  const modelInitChat = "Hello! I'm your AI therapist. How can I help you feel safer online today?";
+  chatWindow.insertAdjacentHTML('beforeend', `<div class="model"><p>${modelInitChat}</p></div>`);
+
   // Render all messages
   messages.history.forEach((msg) => {
     const side = msg.role === 'user' ? 'user' : 'model';
@@ -124,18 +120,15 @@ async function main() {
   let modelText: HTMLParagraphElement | null = null;
 
   try {
-    const chat = ai.chats.create({
-      model: 'gemini-2.0-flash',
+    const chat = model.startChat({
       history: messages.history,
     });
 
-    const stream1 = await chat.sendMessageStream({
-      message: userMessage,
-    });
+    const result = await chat.sendMessageStream(userMessage);
 
     let hasFirstChunk = false;
 
-    for await (const chunk of stream1) {
+    for await (const chunk of result.stream) {
       if (!hasFirstChunk) {
         // On first chunk, remove loader and add model container
         loader.remove();
@@ -146,7 +139,7 @@ async function main() {
         chatWindow.appendChild(modelWrapper);
         hasFirstChunk = true;
       }
-      fullText += chunk.text;
+      fullText += chunk.text();
       if (modelText) modelText.textContent = fullText;
     }
   } catch (err) {
