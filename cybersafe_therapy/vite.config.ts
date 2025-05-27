@@ -5,7 +5,7 @@ export default defineConfig({
   root: '.',
   base: './',
   build: {
-    outDir: path.resolve(__dirname, 'cybersafe_therapy/dist'),
+    outDir: 'dist',
     emptyOutDir: true,
   },
 });
