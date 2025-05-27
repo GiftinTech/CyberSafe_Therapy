@@ -10,19 +10,20 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <section class="chat_window">
-      <button class="close">End Session</button>
-      <div class="chat">
-        <div class="model">
+    <section class="chat_window js_chat_window">
+      <div class="buttons">
+        <button class="close">End Session</button>
+        <button class="clear_button js_clear_button">Clear Chat</button>
+      </div>
+      <div class="chat js_chat">
+        <div class="model js_model">
           <p>Hello! I'm your AI therapist. How can I help you feel safer online today?</p>
-        </div>
-        <div class="user">
-          <p>How can I protect my password?</p>
         </div>
       </div>
       <div class="user_input_area">
-        <input placeholder="Type your message..." type="text" />
-        <button>
+        <!-- <input placeholder="Type your message..." type="text" class="js-user-input" /> -->
+        <textarea class="js-user-input" placeholder="Type your message..."></textarea>
+        <button class="js-send-button">
           <img src="send-icon.png" alt="send" />
         </button>
       </div>

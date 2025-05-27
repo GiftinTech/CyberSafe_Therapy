@@ -6,6 +6,13 @@
   box-sizing: border-box;
 }
 
+:root {
+  --user: rgba(37, 141, 238, 0.774);
+  --model: rgba(46, 45, 45, 0.836);
+  --error: ;
+  --text: whitesmoke;
+}
+
 body {
   max-width: 400px;
   margin: 50px auto 0;
@@ -14,4 +21,44 @@ body {
 .chat_window {
   display: flex;
   flex-direction: column;
+  gap: 30px;
 }
+
+.chat_window .model,
+.chat_window .user {
+  padding: 5px 4px;
+  border-radius: 6px;
+  color: var(--text);
+}
+
+.chat_window .model {
+  text-align: left;
+  background-color: var(--model);
+}
+.chat_window .user {
+  text-align: right;
+  background-color: var(--user);
+  margin: 10px 0;
+}
+
+.user_input_area {
+  display: flex;
+  align-items: flex-start;
+}
+
+.user_input_area textarea {
+  padding-top: 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.user_input_area textarea::placeholder {
+  padding-top: 10px;
+  padding-left: 5px;
+}
+
+/* .user_input_area button {
+  height: auto;
+} */
