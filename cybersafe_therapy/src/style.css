@@ -47,18 +47,27 @@ body {
 }
 
 .user_input_area textarea {
-  padding-top: 5px;
+  height: 35px;
+  padding-top: 14px;
+  padding-left: 5px;
   width: 100%;
   margin-bottom: 20px;
-  white-space: pre-wrap;
-  word-wrap: break-word;
 }
 
 .user_input_area textarea::placeholder {
-  padding-top: 10px;
   padding-left: 5px;
 }
 
-/* .user_input_area button {
-  height: auto;
-} */
+.loader {
+  display: inline-block;
+  width: 30px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side, #000 90%, #0000) 0 / calc(100% / 3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
+}
+@keyframes l1 {
+  to {
+    clip-path: inset(0 -34% 0 0);
+  }
+}
