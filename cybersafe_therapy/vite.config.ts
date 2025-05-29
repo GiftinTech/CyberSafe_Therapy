@@ -1,11 +1,16 @@
-import { defineConfig } from 'vite';
-import path from 'path';
+// vite.config.js
+import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 
 export default defineConfig({
-  root: '.',
-  base: './',
+  root: ".",
+  base: "./",
+  plugins: [tailwindcss()],
   build: {
-    outDir: 'dist',
+    outDir: "dist",
     emptyOutDir: true,
+  },
+  optimizeDeps: {
+    include: ["@google/generative-ai"],
   },
 });

@@ -1,3 +1,66 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+.landing-page-body {
+  font-family: "Inter", sans-serif;
+  background-color: #f9fafb;
+  /* A light gray background for the page */
+}
+/* Removed hero-gradient class as canvas will handle background */
+.hero-section {
+  position: relative; /* Needed for absolute positioning of canvas */
+  overflow: hidden; /* Ensure canvas particles don't overflow visually */
+}
+#heroCanvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0; /* Behind hero content */
+}
+.hero-content-wrapper {
+  position: relative; /* To ensure content is above the canvas */
+  z-index: 1;
+}
+.chat-bubble-assistant {
+  background-color: #ede9fe;
+  color: #5b21b6;
+}
+.chat-bubble-user {
+  background-color: #6d28d9;
+  color: white;
+}
+.nav-active {
+  color: #6d28d9;
+  font-weight: 600;
+}
+.tab-active {
+  background-color: #ede9fe;
+  color: #6d28d9;
+  border-color: #6d28d9;
+}
+.tab-inactive {
+  background-color: white;
+  color: #6b7280;
+  border-color: #d1d5db;
+}
+.star-filled {
+  fill: #fbbf24;
+}
+.star-empty {
+  fill: #d1d5db;
+}
+.chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-scroll::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: #c4b5fd;
+  border-radius: 10px;
+}
+.chat-scroll::-webkit-scrollbar-thumb:hover {
+  background: #a78bfa;
+}
