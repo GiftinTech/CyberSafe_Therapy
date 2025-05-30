@@ -1,14 +1,19 @@
 @import "tailwindcss";
 
-.landing-page-body {
-  font-family: "Inter", sans-serif;
-  background-color: #f9fafb;
-  /* A light gray background for the page */
+@layer utilities {
+  .toggle-btn {
+    @apply [&>div]:rotate-[720deg] [&>div]:bg-transparent [&>div::after]:translate-y-0 [&>div::after]:-rotate-45 [&>div::before]:translate-y-0 [&>div::before]:rotate-45;
+  }
 }
-/* Removed hero-gradient class as canvas will handle background */
+
+.landing-page-body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9fafb;
+}
+
 .hero-section {
-  position: relative; /* Needed for absolute positioning of canvas */
-  overflow: hidden; /* Ensure canvas particles don't overflow visually */
+  position: relative;
+  overflow: hidden;
 }
 #heroCanvas {
   position: absolute;
@@ -16,10 +21,10 @@
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: 0; /* Behind hero content */
+  z-index: 0;
 }
 .hero-content-wrapper {
-  position: relative; /* To ensure content is above the canvas */
+  position: relative;
   z-index: 1;
 }
 .chat-bubble-assistant {
@@ -63,4 +68,113 @@
 }
 .chat-scroll::-webkit-scrollbar-thumb:hover {
   background: #a78bfa;
+}
+
+/* User message style */
+.user {
+  align-self: flex-end;
+  background: #4f46e5;
+  color: whitesmoke;
+  border-radius: 0.75rem;
+  border-bottom-right-radius: 0;
+  padding: 0.75rem;
+  font-size: 0.95rem;
+  text-align: right;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.04);
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  max-width: 80%;
+}
+
+/* Model (AI) message style */
+.model {
+  align-self: flex-start;
+  background: #ede9fe; /* Tailwind's bg-purple-100 */
+  color: #6d28d9; /* Tailwind's text-purple-700 */
+  border-radius: 0.75rem; /* rounded-lg */
+  border-top-left-radius: 0; /* rounded-tl-none */
+  padding: 0.75rem; /* p-3 */
+  font-size: 0.95rem;
+  text-align: left;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+  max-width: 80%;
+}
+
+/* Modern, catchy textarea */
+.user-input {
+  background: #f3f4f6;
+  border: none;
+  outline: none;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  color: #4f46e5;
+  box-shadow: 0 2px 12px 0 rgba(109, 40, 217, 0.08);
+  transition:
+    box-shadow 0.2s,
+    border 0.2s;
+  resize: none;
+  height: 50px;
+  padding-top: 14px;
+  padding-left: 5px;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.user-input:focus {
+  box-shadow: 0 0 0 3px #c7d2fe;
+  background: linear-gradient(135deg, #f3f4f6 60%, #ede9fe 100%);
+}
+
+/* Modern, catchy send button */
+.send-button {
+  background: linear-gradient(90deg, #6d28d9 0%, #4f46e5 100%);
+  border: none;
+  border-radius: 0.75rem;
+  padding: 0.75rem 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 8px 0 rgba(109, 40, 217, 0.13);
+  transition:
+    background 0.2s,
+    transform 0.1s;
+  cursor: pointer;
+  margin: 20px 0;
+}
+.send-button:hover,
+.send-button:focus {
+  background: linear-gradient(90deg, #4f46e5 0%, #6d28d9 100%);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 4px 16px 0 rgba(109, 40, 217, 0.18);
+}
+.send-button img {
+  filter: drop-shadow(0 1px 2px #a5b4fc);
+  width: 1.7rem;
+  height: 1.7rem;
+}
+
+.chat-scroll {
+  overflow-y: scroll;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+.chat-scroll::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.loader {
+  display: inline-block;
+  width: 30px;
+  aspect-ratio: 4;
+  background: radial-gradient(circle closest-side, #000 90%, #0000) 0 /
+    calc(100% / 3) 100% space;
+  clip-path: inset(0 100% 0 0);
+  animation: l1 1s steps(4) infinite;
+}
+@keyframes l1 {
+  to {
+    clip-path: inset(0 -34% 0 0);
+  }
 }

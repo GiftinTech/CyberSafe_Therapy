@@ -1,42 +1,1454 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="author" content="GiftinTech" />
-    <meta name="description" content="An AI powered CyberSafe Therapist" />
-    <title>CyberSafe AI Therapy</title>
+    <meta
+      name="description"
+      content="AI powered cyber safe wellness support designed specifically for teens and young adults."
+    />
+    <title>CyberSafe - Your AI Therapist</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="/img/brand-logo.png" type="image/x-icon" />
   </head>
-  <body>
-    <section class="chat_window js_chat_window">
-      <div class="buttons">
-        <button class="close">
-          <a href="./landing-page.html">End Session</a>
-        </button>
-        <button class="clear_button js_clear_button">Clear Chat</button>
-      </div>
-      <div class="chat js_chat">
-        <div class="model js_model">
-          <p>
-            Hello! I'm your AI therapist. How can I help you feel safer online
-            today?
-          </p>
+  <body class="landing-page-body text-gray-800">
+    <!-- Header Section -->
+    <header class="sticky top-0 z-50 h-20 bg-white shadow-sm">
+      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between">
+          <div class="flex items-center">
+            <img
+              class="-mt-4 h-24 w-30"
+              src="/img/brand-logo.png"
+              alt="CyberSafe Therapy Logo"
+            />
+            <span class="-ml-6 text-2xl font-bold text-black"
+              >Cyber<span
+                class="bg-linear-to-r from-indigo-700 to-purple-600 bg-clip-text text-transparent"
+                >Safe</span
+              ></span
+            >
+          </div>
+          <nav class="mx-2 hidden items-center space-x-4 sm:space-x-2 md:flex">
+            <a
+              href="#home"
+              class="nav-link text-md rounded-md px-3 py-2 font-medium text-gray-600 hover:text-purple-600 sm:text-[14px]"
+              >Home</a
+            >
+            <a
+              href="#features"
+              class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+              >Features</a
+            >
+            <a
+              href="#how-it-works"
+              class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+              >How It Works</a
+            >
+            <a
+              href="#chat-now"
+              class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+              >Chat Now</a
+            >
+
+            <a
+              href="#resources"
+              class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+              >Resources</a
+            >
+            <a
+              href="#testimonials"
+              class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+              >Testimonials</a
+            >
+            <a
+              href="#faq"
+              class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+              >Faq</a
+            >
+
+            <a
+              href="#contact"
+              class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+              >Contact</a
+            >
+          </nav>
+          <div>
+            <a
+              href="landing-page.html"
+              class="p-2.5hover:bg-purple-700 rounded-3xl bg-linear-to-r from-indigo-700 to-purple-600 px-6 py-2 font-semibold text-white shadow-md transition duration-150 ease-in-out"
+              >Get Started</a
+            >
+          </div>
+          <div class="md:hidden">
+            <button
+              type="button"
+              id="hamburger-button"
+              class="relative h-8 w-8 cursor-pointer text-3xl"
+              aria-label="toggle menu"
+            >
+              <div
+                class="absolute top-4 -mt-0.5 h-1 w-8 rounded bg-black transition-all duration-500 before:absolute before:h-1 before:w-8 before:-translate-x-4 before:-translate-y-2 before:rounded before:bg-black before:transition-all before:duration-500 before:content-[''] after:absolute after:h-1 after:w-8 after:-translate-x-4 after:translate-y-2 after:rounded after:bg-black after:transition-all after:duration-500 after:content-['']"
+              ></div>
+            </button>
+          </div>
+          <div
+            id="mobile-menu"
+            class="animate-open-menu absolute top-20 right-0 hidden h-auto w-1/2 origin-top cursor-pointer flex-col items-start bg-white py-10 pl-4"
+          >
+            <nav class="flex flex-col items-start gap-4">
+              <a
+                href="#home"
+                class="nav-link text-md rounded-md px-3 py-2 font-medium text-gray-600 hover:text-purple-600 sm:text-[14px]"
+                >Home</a
+              >
+              <a
+                href="#features"
+                class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+                >Features</a
+              >
+              <a
+                href="#how-it-works"
+                class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+                >How It Works</a
+              >
+              <a
+                href="#chat-now"
+                class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+                >Chat Now</a
+              >
+
+              <a
+                href="#resources"
+                class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+                >Resources</a
+              >
+              <a
+                href="#testimonials"
+                class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+                >Testimonials</a
+              >
+              <a
+                href="#faq"
+                class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+                >Faq</a
+              >
+
+              <a
+                href="#contact"
+                class="text-md nav-link rounded-md px-3 py-2 font-medium text-gray-500 hover:text-purple-600 sm:text-[14px]"
+                >Contact</a
+              >
+            </nav>
+          </div>
         </div>
-        <div class="loader js_loader"></div>
       </div>
-      <div class="user_input_area">
-        <!-- <input placeholder="Type your message..." type="text" class="js-user-input" /> -->
-        <textarea
-          class="js-user-input"
-          placeholder="Type your message..."
-        ></textarea>
-        <button class="js-send-button">
-          <img src="send-icon.png" alt="send" />
+    </header>
+
+    <!-- Hero Section -->
+    <section
+      id="home"
+      class="hero-section relative scroll-mt-20 py-20 text-white md:py-32 md:pt-20 md:pl-20"
+    >
+      <canvas id="heroCanvas"></canvas>
+      <div
+        class="hero-content-wrapper container mx-auto grid items-center gap-20 px-4 sm:px-6 md:grid-cols-2 md:gap-30 lg:px-8"
+      >
+        <div class="text-center md:text-left">
+          <span
+            class="mb-4 inline-block rounded-full bg-white/20 px-4 py-1 text-sm font-semibold"
+            >AI-Powered Support</span
+          >
+          <h1
+            class="mb-6 text-4xl leading-none font-bold sm:text-5xl lg:text-6xl"
+          >
+            Your Safe Space for Mental Wellness
+          </h1>
+          <p class="mb-8 text-lg text-purple-100 sm:text-xl">
+            Confidential AI-powered therapy support designed specifically for
+            teens and young adults. Talk about anything, anytime.
+          </p>
+          <div
+            class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 md:justify-start"
+          >
+            <button
+              class="rounded-lg bg-white px-8 py-4 text-lg font-semibold text-purple-600 shadow-lg transition duration-150 hover:bg-gray-100"
+            >
+              Start Chatting Now
+            </button>
+            <button
+              class="rounded-lg border-2 border-white bg-transparent px-8 py-4 text-lg font-semibold text-white transition duration-150 hover:bg-white/10"
+            >
+              Learn How It Works
+            </button>
+          </div>
+          <div class="mt-5 flex flex-row">
+            <div
+              class="-mr-2 flex h-9 w-9 items-center justify-center rounded-full bg-purple-500 text-[12px] font-bold text-white"
+            >
+              JT
+            </div>
+            <div
+              class="-mr-2 flex h-9 w-9 items-center justify-center rounded-full bg-green-500 text-[12px] font-bold text-white"
+            >
+              AL
+            </div>
+            <div
+              class="mr-8 flex h-9 w-9 items-center justify-center rounded-full bg-pink-500 text-[12px] font-bold text-white"
+            >
+              MK
+            </div>
+            <div class="self-center font-bold">500+ teens helped this week</div>
+          </div>
+        </div>
+
+        <div
+          class="mx-auto w-full max-w-md rounded-xl bg-white p-6 shadow-2xl md:mx-0"
+        >
+          <div class="mb-4 flex items-center border-b border-gray-200 pb-3">
+            <img
+              src="/img/chat-icon.png"
+              alt="Chat Icon"
+              class="mr-3 h-8 w-8 rounded-3xl bg-purple-600 p-1"
+            />
+            <h3 class="text-lg font-semibold text-gray-700">
+              Cyber<span
+                class="bg-linear-to-r from-indigo-700 to-purple-600 bg-clip-text text-transparent"
+                >Safe</span
+              >
+              AI
+            </h3>
+            <div class="ml-auto flex space-x-1.5">
+              <span class="block h-3 w-3 rounded-full bg-red-400"></span>
+              <span class="block h-3 w-3 rounded-full bg-yellow-400"></span>
+              <span class="block h-3 w-3 rounded-full bg-green-400"></span>
+            </div>
+          </div>
+          <div class="chat-scroll h-64 space-y-4 overflow-y-auto pr-2">
+            <div class="flex items-start">
+              <div
+                class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-purple-200 text-sm font-semibold text-purple-700"
+              >
+                AI
+              </div>
+              <div
+                class="chat-bubble-assistant ml-3 max-w-xs rounded-lg rounded-tl-none p-3"
+              >
+                <p class="text-sm">
+                  Hello! I'm your Cyber<span
+                    class="bg-linear-to-r from-indigo-700 to-purple-600 bg-clip-text text-transparent"
+                    >Safe</span
+                  >
+                  therapist. How are you and how can I help you feel safer
+                  online today?
+                </p>
+              </div>
+            </div>
+            <div class="flex justify-end">
+              <div
+                class="chat-bubble-user mr-3 max-w-xs rounded-lg rounded-br-none p-3"
+              >
+                <p class="text-sm">
+                  I've been feeling really stressed about school lately.
+                </p>
+              </div>
+              <div
+                class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-indigo-200 text-sm font-semibold text-indigo-700"
+              >
+                You
+              </div>
+            </div>
+            <div class="flex items-start">
+              <div
+                class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-purple-200 text-sm font-semibold text-purple-700"
+              >
+                AI
+              </div>
+              <div
+                class="chat-bubble-assistant ml-3 max-w-xs rounded-lg rounded-tl-none p-3"
+              >
+                <p class="text-sm">
+                  I understand school can be overwhelming. Can you tell me more
+                  about what's causing you stress?
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mt-4 flex items-center">
+            <input
+              type="text"
+              placeholder="Type your message..."
+              class="flex-grow rounded-lg border border-gray-300 p-3 text-sm outline-none focus:border-transparent focus:ring-2 focus:ring-purple-400"
+            />
+            <button
+              class="-ml-1 rounded-tr-lg rounded-br-lg bg-linear-to-r from-indigo-700 to-purple-600 p-2.5 transition duration-150 hover:bg-purple-700"
+            >
+              <img src="/img/send-icon.png" alt="Send Icon" class="h-6.5 w-6" />
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Curvy SVG divider at the bottom -->
+      <div
+        class="pointer-events-none absolute right-0 -bottom-8 left-0 z-10 w-full overflow-hidden leading-none"
+      >
+        <svg
+          viewBox="0 0 1440 180"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-32 w-full"
+          preserveAspectRatio="none"
+        >
+          <path
+            fill="#fff"
+            fill-opacity="1"
+            d="M0,120 C360,200 1080,40 1440,120 L1440,180 L0,180 Z"
+          />
+        </svg>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section
+      id="features"
+      class="scroll-mt-6 bg-purple-50 py-16 md:scroll-mt-3 md:py-24"
+    >
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <span
+          class="mb-3 inline-block rounded-full bg-purple-200 px-4 py-1 text-sm font-semibold text-purple-700"
+          >Features</span
+        >
+        <h2 class="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">
+          How Cyber<span
+            class="bg-linear-to-r from-indigo-700 to-purple-600 bg-clip-text text-transparent"
+            >Safe</span
+          >
+          Helps You
+        </h2>
+        <p class="mx-auto mb-12 max-w-2xl text-lg text-gray-600 md:mb-16">
+          Our AI therapy companion is designed with teens and young adults in
+          mind, providing support when you need it most.
+        </p>
+        <div class="grid gap-8 md:grid-cols-3 md:gap-12">
+          <div
+            class="rounded-xl bg-white p-8 text-left shadow-lg transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-r from-indigo-500 to-purple-700 text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-7 w-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M16.5 10.5V6.75a4.5 4.5 0 10-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 002.25-2.25v-6.75a2.25 2.25 0 00-2.25-2.25H6.75a2.25 2.25 0 00-2.25 2.25v6.75a2.25 2.25 0 002.25 2.25z"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-gray-800">
+              Safe & Private
+            </h3>
+            <p class="mb-4 text-gray-600">
+              Your conversations are completely private. We don't store personal
+              data and everything is encrypted.
+            </p>
+            <a
+              href="#"
+              class="font-medium text-purple-600 transition duration-150 hover:text-purple-800"
+              >Learn about our privacy &rarr;</a
+            >
+          </div>
+          <div
+            class="rounded-xl bg-white p-8 text-left shadow-lg transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-r from-indigo-500 to-purple-700 text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-7 w-7"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-gray-800">
+              24/7 Availability
+            </h3>
+            <p class="mb-4 text-gray-600">
+              Get support whenever you need it, day or night. No appointments or
+              waiting lists.
+            </p>
+            <a
+              href="#"
+              class="font-medium text-purple-600 transition duration-150 hover:text-purple-800"
+              >Start chatting now &rarr;</a
+            >
+          </div>
+          <div
+            class="rounded-xl bg-white p-8 text-left shadow-lg transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-linear-to-r from-indigo-500 to-purple-700 text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="h-7 w-7"
+                shape-rendering="geometricPrecision"
+                text-rendering="geometricPrecision"
+                image-rendering="optimizeQuality"
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                viewBox="0 0 466 512.14"
+                stroke="currentColor"
+                fill="white"
+              >
+                <path
+                  d="M232.2 0c86.89 55.08 165.39 81.13 232.75 74.98 11.77 237.97-76.11 378.51-231.85 437.16C82.7 457.24-6.26 322.75.34 71.36 79.42 75.5 157.01 58.41 232.2 0zm-41.64 251.87a157.92 157.92 0 0 1 14.9 14.42c14.56-23.44 30.09-44.96 46.48-64.75 46.36-55.99 25.35-45.2 89.65-45.2l-8.93 9.93c-27.46 30.5-36.72 46.39-59.23 78.9-22.51 32.55-42.63 66.14-60.54 100.71l-5.56 10.75-5.12-10.94c-9.44-20.28-20.76-38.88-34.24-55.51-13.49-16.63-25.27-27.47-43.56-40.02 8.38-27.51 48.27-13.43 66.15 1.71zm41.79-212.23c72.06 45.67 141.23 71.35 197.09 66.24 9.76 197.35-67.19 317.97-196.33 366.61C108.37 426.97 30.53 311.37 36 102.89c72.38 3.79 138.71-18.47 196.35-63.25z"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-gray-800">
+              Cyber Safety Focus
+            </h3>
+            <p class="mb-4 text-gray-600">
+              Get guidance on navigating online challenges, social media stress
+              and digital wellness.
+            </p>
+            <a
+              href="#"
+              class="font-medium text-purple-600 transition duration-150 hover:text-purple-800"
+              >Our approach &rarr;</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it Works Section -->
+    <section
+      id="how-it-works"
+      class="scroll-mt-6 bg-white py-16 md:scroll-mt-3 md:py-24"
+    >
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <span
+          class="mb-3 inline-block rounded-full bg-purple-100 px-4 py-1 text-sm font-semibold text-purple-700"
+          >How It Works</span
+        >
+        <h2 class="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">
+          Your Journey to Better Mental Health
+        </h2>
+        <p class="mx-auto mb-12 max-w-2xl text-lg text-gray-600 md:mb-16">
+          Cyber<span
+            class="bg-linear-to-r from-indigo-700 to-purple-600 bg-clip-text text-transparent"
+            >Safe</span
+          >
+          makes mental wellness support accessible, private, and tailored to
+          your needs.
+        </p>
+        <div class="grid gap-8 md:grid-cols-3 md:gap-12">
+          <div
+            class="rounded-xl bg-gray-50 p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-r from-indigo-500 to-purple-700 text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-8 w-8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12c0 4.556-3.861 8.25-8.625 8.25S3.75 16.556 3.75 12c0-4.556 3.861-8.25 8.625-8.25S21 7.444 21 12z"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-gray-800">
+              1. Start a Chat
+            </h3>
+            <p class="text-gray-600">
+              Begin chatting with our AI assistant about whatever's on your
+              mind. No judgment, just support.
+            </p>
+          </div>
+          <div
+            class="rounded-xl bg-gray-50 p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-r from-indigo-500 to-purple-700 text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-8 w-8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-gray-800">
+              2. Get Personalized Support
+            </h3>
+            <p class="text-gray-600">
+              Receive evidence-based strategies and resources tailored to your
+              specific situation and needs.
+            </p>
+          </div>
+          <div
+            class="rounded-xl bg-gray-50 p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+          >
+            <div
+              class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-full bg-linear-to-r from-indigo-500 to-purple-700 text-white"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-8 w-8"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M10.5 6h9.75M10.5 6a1.5 1.5 0 11-3 0m3 0a1.5 1.5 0 10-3 0M3.75 6H7.5m3 12h9.75m-9.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-3.75 0H7.5m9-6h3.75m-3.75 0a1.5 1.5 0 01-3 0m3 0a1.5 1.5 0 00-3 0m-9.75 0h9.75"
+                />
+              </svg>
+            </div>
+            <h3 class="mb-3 text-xl font-semibold text-gray-800">
+              3. Build Healthy Habits
+            </h3>
+            <p class="text-gray-600">
+              Develop coping skills and mental wellness practices that you can
+              use in your daily life.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Chat Now Section -->
+    <section
+      id="chat-now"
+      class="scroll-mt-6 bg-white py-16 md:scroll-mt-3 md:py-24"
+    >
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <span
+          class="mb-3 inline-block rounded-full bg-purple-100 px-4 py-1 text-sm font-semibold text-purple-700"
+          >Interactive Demo</span
+        >
+        <h2 class="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">
+          See How It Works
+        </h2>
+        <p class="mx-auto mb-12 max-w-2xl text-lg text-gray-600 md:mb-16">
+          Experience a conversation with our AI therapist designed specifically
+          for young people.
+        </p>
+        <div
+          class="mx-auto flex min-h-[280px] w-full max-w-4xl flex-col gap-0 overflow-hidden rounded-xl lg:flex-row"
+        >
+          <!-- New Info Div -->
+          <div
+            class="flex flex-1 flex-col justify-center bg-gradient-to-br from-indigo-900 to-purple-700 p-6 text-white"
+          >
+            <h2 class="mb-4 text-2xl font-bold">Ready to Chat?</h2>
+            <p class="mb-6">
+              Our AI therapist is here to listen, support and guide you through
+              whatever you're facing.
+            </p>
+            <ul class="list-none space-y-3">
+              <li class="flex items-start">
+                <span class="mt-1 mr-2 inline-block text-green-300">
+                  <!-- Checkmark SVG -->
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+                <span>No registration required</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mt-1 mr-2 inline-block text-green-300">
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+                <span>100% anonymous</span>
+              </li>
+              <li class="flex items-start">
+                <span class="mt-1 mr-2 inline-block text-green-300">
+                  <svg
+                    class="h-5 w-5"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="3"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M5 13l4 4L19 7"
+                    />
+                  </svg>
+                </span>
+                <span>Available 24/7</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Existing Chat Demo Div -->
+          <div
+            class="flex-1 border border-purple-200 bg-gray-100 p-6 shadow-xl sm:p-8"
+          >
+            <div class="mb-4 flex items-center border-b border-gray-300 pb-3">
+              <img
+                src="/img/chat-icon.png"
+                alt="Chat Icon"
+                class="mr-3 h-8 w-8 rounded-3xl bg-purple-600 p-1"
+              />
+              <h3 class="text-lg font-semibold text-gray-700">
+                Cyber<span
+                  class="bg-linear-to-r from-indigo-700 to-purple-600 bg-clip-text text-transparent"
+                  >Safe</span
+                >
+                AI
+              </h3>
+              <div class="ml-auto flex space-x-1.5">
+                <span class="block h-3 w-3 rounded-full bg-red-400"></span>
+                <span class="block h-3 w-3 rounded-full bg-yellow-400"></span>
+                <span class="block h-3 w-3 rounded-full bg-green-400"></span>
+              </div>
+            </div>
+            <div class="chat-scroll mb-6 h-40 space-y-4 overflow-y-auto pr-2">
+              <div class="flex items-start">
+                <div
+                  class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-purple-200 text-sm font-semibold text-purple-700"
+                >
+                  AI
+                </div>
+                <div
+                  class="chat-bubble-assistant ml-3 max-w-md rounded-lg rounded-tl-none p-3"
+                >
+                  <p class="text-sm">
+                    Hi there! I'm your CyberSafe assistant. How are you feeling
+                    today?
+                  </p>
+                </div>
+              </div>
+              <div class="flex justify-end">
+                <div
+                  class="chat-bubble-user mr-3 max-w-md rounded-lg rounded-br-none p-3"
+                >
+                  <p class="text-sm">
+                    I've been feeling really stressed about school lately.
+                  </p>
+                </div>
+                <div
+                  class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-indigo-200 text-sm font-semibold text-indigo-700"
+                >
+                  You
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-purple-200 text-sm font-semibold text-purple-700"
+                >
+                  AI
+                </div>
+                <div
+                  class="chat-bubble-assistant ml-3 max-w-md rounded-lg rounded-tl-none p-3"
+                >
+                  <p class="text-sm">
+                    I understand school can be overwhelming. Can you tell me
+                    more about what's causing you stress?
+                  </p>
+                </div>
+              </div>
+              <div class="flex justify-end">
+                <div
+                  class="chat-bubble-user mr-3 max-w-md rounded-lg rounded-br-none p-3"
+                >
+                  <p class="text-sm">
+                    I have three big assignments due next week and I don't know
+                    how I'll manage.
+                  </p>
+                </div>
+                <div
+                  class="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-indigo-200 text-sm font-semibold text-indigo-700"
+                >
+                  You
+                </div>
+              </div>
+            </div>
+            <div class="mt-4 flex items-center">
+              <input
+                type="text"
+                placeholder="Type your message..."
+                class="flex-grow rounded-lg border border-gray-300 border-r-transparent bg-white p-3 text-sm outline-none focus:border-transparent focus:ring-2 focus:ring-purple-400"
+              />
+              <button
+                class="-ml-1 rounded-tr-lg rounded-br-lg bg-linear-to-r from-indigo-700 to-purple-600 p-2.5 transition duration-150 hover:bg-purple-700"
+              >
+                <img
+                  src="/img/send-icon.png"
+                  alt="Send Icon"
+                  class="h-6.5 w-6"
+                />
+              </button>
+            </div>
+            <p class="mt-4 text-xs text-gray-500">
+              This is a demonstration. In the real app, conversations are
+              private and secure.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="mt-12 flex justify-center">
+        <button
+          class="cursor-pointer rounded-lg bg-linear-to-r from-indigo-700 to-purple-600 px-10 py-4 text-lg font-semibold text-white shadow-lg transition duration-150 hover:bg-purple-700"
+        >
+          Start Chatting Now
         </button>
       </div>
     </section>
 
-    <script type="module" src="/src/main.ts"></script>
+    <!-- Resources Section -->
+    <section
+      id="resources"
+      class="scroll-mt-6 bg-white py-16 md:scroll-mt-3 md:py-24"
+    >
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <span
+          class="mb-3 inline-block rounded-full bg-purple-100 px-4 py-1 text-sm font-semibold text-purple-700"
+          >Resources</span
+        >
+        <h2 class="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">
+          Mental Health Resources
+        </h2>
+        <p class="mx-auto mb-10 max-w-2xl text-lg text-gray-600">
+          Helpful tools, articles, and emergency contacts for Nigerian and
+          African youth.
+        </p>
+        <div class="mb-10 flex flex-wrap justify-center gap-2 sm:gap-4">
+          <button
+            class="tab-active cursor-pointer rounded-lg border-2 px-4 py-2 text-sm font-medium transition duration-150 sm:px-6 sm:py-3 sm:text-base"
+            data-tab="crisis"
+          >
+            Crisis Support
+          </button>
+          <button
+            class="tab-inactive cursor-pointer rounded-lg border-2 px-4 py-2 text-sm font-medium transition duration-150 hover:border-gray-400 hover:bg-gray-100 sm:px-6 sm:py-3 sm:text-base"
+            data-tab="articles"
+          >
+            Articles & Guides
+          </button>
+          <button
+            class="tab-inactive cursor-pointer rounded-lg border-2 px-4 py-2 text-sm font-medium transition duration-150 hover:border-gray-400 hover:bg-gray-100 sm:px-6 sm:py-3 sm:text-base"
+            data-tab="selfhelp"
+          >
+            Self-Help Tools
+          </button>
+          <button
+            class="tab-inactive cursor-pointer rounded-lg border-2 px-4 py-2 text-sm font-medium transition duration-150 hover:border-gray-400 hover:bg-gray-100 sm:px-6 sm:py-3 sm:text-base"
+            data-tab="community"
+          >
+            Community Support
+          </button>
+        </div>
+
+        <!-- Crisis Support Tab -->
+        <div id="tab-crisis" class="tab-content">
+          <div
+            class="mx-auto mb-10 max-w-3xl rounded-md border-l-4 border-red-500 bg-red-100 p-4 text-left text-red-700"
+            role="alert"
+          >
+            <div class="flex">
+              <div class="py-1">
+                <svg
+                  class="mr-4 h-6 w-6 fill-current text-red-500"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    d="M2.93 17.07A10 10 0 1 1 17.07 2.93 10 10 0 0 1 2.93 17.07zM9 5v6h2V5H9zm0 8v2h2v-2H9z"
+                  />
+                </svg>
+              </div>
+              <div>
+                <p class="font-bold">Important</p>
+                <p class="text-sm">
+                  If you're experiencing a mental health emergency, please call
+                  emergency services or a crisis hotline immediately.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            class="grid gap-8 text-left md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+          >
+            <div
+              class="rounded-xl bg-gray-50 p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+            >
+              <div class="mb-3 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="mr-3 h-8 w-8 text-purple-600"
+                >
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="10"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                  <circle
+                    cx="12"
+                    cy="12"
+                    r="4"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    fill="none"
+                  />
+                  <path
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    d="M4.93 4.93l3.54 3.54M19.07 4.93l-3.54 3.54M19.07 19.07l-3.54-3.54M4.93 19.07l3.54-3.54"
+                  />
+                </svg>
+                <h3 class="text-lg font-semibold text-gray-800">
+                  Nigeria Suicide Prevention Initiative
+                </h3>
+              </div>
+              <p class="mb-3 text-sm text-gray-600">
+                24/7, free and confidential support for Nigerians in crisis.
+              </p>
+              <p class="mb-3 text-xl font-bold text-purple-700">
+                +234 806 210 6493
+              </p>
+              <a
+                href="https://nspi.com.ng/"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 transition duration-150 hover:text-purple-800"
+                >Visit website &rarr;</a
+              >
+            </div>
+            <div
+              class="rounded-xl bg-gray-50 p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+            >
+              <div class="mb-3 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="mr-3 h-8 w-8 text-purple-600"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M8.625 12a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H8.25m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0H12m4.125 0a.375.375 0 11-.75 0 .375.375 0 01.75 0zm0 0h-.375M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
+                <h3 class="text-lg font-semibold text-gray-800">
+                  Mentally Aware Nigeria Initiative (MANI)
+                </h3>
+              </div>
+              <p class="mb-3 text-sm text-gray-600">
+                Mental health crisis support and counseling for young Nigerians.
+              </p>
+              <p class="mb-3 text-xl font-bold text-purple-700">
+                +234 901 295 0028
+              </p>
+              <a
+                href="https://mentallyaware.org/"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 transition duration-150 hover:text-purple-800"
+                >Learn more &rarr;</a
+              >
+            </div>
+            <div
+              class="rounded-xl bg-gray-50 p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
+            >
+              <div class="mb-3 flex items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke-width="1.5"
+                  stroke="currentColor"
+                  class="mr-3 h-8 w-8 text-purple-600"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"
+                  />
+                </svg>
+                <h3 class="text-lg font-semibold text-gray-800">
+                  South African Depression and Anxiety Group (SADAG)
+                </h3>
+              </div>
+              <p class="mb-3 text-sm text-gray-600">
+                Africa's largest mental health support group. Free helpline for
+                youth.
+              </p>
+              <p class="mb-3 text-xl font-bold text-purple-700">
+                +27 800 567 567
+              </p>
+              <a
+                href="https://www.sadag.org/"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 transition duration-150 hover:text-purple-800"
+                >Visit website &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Articles & Guides Tab -->
+        <div id="tab-articles" class="tab-content hidden">
+          <div
+            class="grid gap-8 text-left md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+          >
+            <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
+              <h3 class="mb-2 text-lg font-semibold text-gray-800">
+                Understanding Mental Health in Nigeria
+              </h3>
+              <p class="mb-3 text-sm text-gray-600">
+                Learn about common mental health challenges Nigerian youth face
+                and how to seek help.
+              </p>
+              <a
+                href="https://guardian.ng/features/mental-health-in-nigeria/"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 hover:text-purple-800"
+                >Read Article &rarr;</a
+              >
+            </div>
+            <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
+              <h3 class="mb-2 text-lg font-semibold text-gray-800">
+                Coping with Academic Pressure
+              </h3>
+              <p class="mb-3 text-sm text-gray-600">
+                Tips for handling school stress, WAEC/JAMB anxiety, and
+                balancing studies with life.
+              </p>
+              <a
+                href="https://www.premiumtimesng.com/health/health-news/482222-how-to-cope-with-academic-stress.html"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 hover:text-purple-800"
+                >Read Guide &rarr;</a
+              >
+            </div>
+            <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
+              <h3 class="mb-2 text-lg font-semibold text-gray-800">
+                Talking to Parents About Mental Health
+              </h3>
+              <p class="mb-3 text-sm text-gray-600">
+                How to start a conversation with your family about your feelings
+                and mental health.
+              </p>
+              <a
+                href="https://www.bellanaija.com/2022/05/mental-health-nigeria/"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 hover:text-purple-800"
+                >Read More &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Self-Help Tools Tab -->
+        <div id="tab-selfhelp" class="tab-content hidden">
+          <div
+            class="grid gap-8 text-left md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+          >
+            <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
+              <h3 class="mb-2 text-lg font-semibold text-gray-800">
+                Mood Tracker (Printable)
+              </h3>
+              <p class="mb-3 text-sm text-gray-600">
+                Download a simple mood tracker to help you monitor your feelings
+                daily.
+              </p>
+              <a
+                href="https://www.verywellmind.com/printable-mood-chart-4798329"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 hover:text-purple-800"
+                >Download &rarr;</a
+              >
+            </div>
+            <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
+              <h3 class="mb-2 text-lg font-semibold text-gray-800">
+                Guided Breathing Exercise (Audio)
+              </h3>
+              <p class="mb-3 text-sm text-gray-600">
+                Listen to a calming breathing exercise, perfect for stressful
+                moments.
+              </p>
+              <a
+                href="https://www.youtube.com/watch?v=nmFUDkj1Aq0"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 hover:text-purple-800"
+                >Listen &rarr;</a
+              >
+            </div>
+            <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
+              <h3 class="mb-2 text-lg font-semibold text-gray-800">
+                Affirmations for African Youth
+              </h3>
+              <p class="mb-3 text-sm text-gray-600">
+                Positive affirmations to boost your confidence and self-worth.
+              </p>
+              <a
+                href="https://www.instagram.com/explore/tags/africanaffirmations/"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 hover:text-purple-800"
+                >See Affirmations &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Community Support Tab -->
+        <div id="tab-community" class="tab-content hidden">
+          <div
+            class="grid gap-8 text-left md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+          >
+            <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
+              <h3 class="mb-2 text-lg font-semibold text-gray-800">
+                MANI Peer Support Groups
+              </h3>
+              <p class="mb-3 text-sm text-gray-600">
+                Join WhatsApp and Telegram groups for Nigerian youth to share
+                and support each other.
+              </p>
+              <a
+                href="https://mentallyaware.org/peer-support/"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 hover:text-purple-800"
+                >Join Group &rarr;</a
+              >
+            </div>
+            <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
+              <h3 class="mb-2 text-lg font-semibold text-gray-800">
+                She Writes Woman Community
+              </h3>
+              <p class="mb-3 text-sm text-gray-600">
+                Safe space for women and girls in Nigeria to talk about mental
+                health.
+              </p>
+              <a
+                href="https://shewriteswoman.org/"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 hover:text-purple-800"
+                >Learn More &rarr;</a
+              >
+            </div>
+            <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
+              <h3 class="mb-2 text-lg font-semibold text-gray-800">
+                Twitter Spaces & Instagram Live
+              </h3>
+              <p class="mb-3 text-sm text-gray-600">
+                Join live conversations about mental health with Nigerian
+                advocates and therapists.
+              </p>
+              <a
+                href="https://twitter.com/hashtag/mentalhealthnigeria"
+                target="_blank"
+                class="text-sm font-medium text-purple-600 hover:text-purple-800"
+                >See Upcoming Events &rarr;</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section
+      id="testimonials"
+      class="scroll-mt-6 bg-purple-50 py-16 md:scroll-mt-3 md:py-24"
+    >
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <span
+          class="mb-3 inline-block rounded-full bg-purple-200 px-4 py-1 text-sm font-semibold text-purple-700"
+          >Testimonials</span
+        >
+        <h2 class="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">
+          What Young People Say
+        </h2>
+        <p class="mx-auto mb-12 max-w-2xl text-lg text-gray-600 md:mb-16">
+          Hear from others who have used CyberSafe to support their mental
+          wellness journey.
+        </p>
+        <div class="grid gap-8 md:grid-cols-3 md:gap-12">
+          <div class="relative rounded-xl bg-white p-8 text-left shadow-lg">
+            <div class="absolute top-4 right-4 text-purple-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="h-10 w-10"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
+                />
+              </svg>
+            </div>
+            <div class="mb-4 flex items-center">
+              <div
+                class="mr-4 flex h-14 w-14 items-center justify-center rounded-full bg-purple-500 text-xl font-bold text-white"
+              >
+                JT
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-800">Jamie T.</h4>
+                <p class="text-sm text-gray-500">Age 17</p>
+              </div>
+            </div>
+            <p class="mb-4 text-sm leading-relaxed text-gray-600">
+              "I was skeptical at first, but CyberSafe has been there for me
+              during late nights when anxiety hits. It's like having a
+              supportive friend who never judges."
+            </p>
+            <div class="flex items-center" data-rating="5">
+              {/* Stars will be generated by JS */}
+            </div>
+          </div>
+          <div class="relative rounded-xl bg-white p-8 text-left shadow-lg">
+            <div class="absolute top-4 right-4 text-purple-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="h-10 w-10"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
+                />
+              </svg>
+            </div>
+            <div class="mb-4 flex items-center">
+              <div
+                class="mr-4 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-xl font-bold text-white"
+              >
+                AL
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-800">Alex L.</h4>
+                <p class="text-sm text-gray-500">Age 20</p>
+              </div>
+            </div>
+            <p class="mb-4 text-sm leading-relaxed text-gray-600">
+              "College was overwhelming me and I didn't know where to turn.
+              CyberSafe helped me develop coping strategies that actually work
+              for my busy schedule."
+            </p>
+            <div class="flex items-center" data-rating="5">
+              {/* Stars will be generated by JS */}
+            </div>
+          </div>
+          <div class="relative rounded-xl bg-white p-8 text-left shadow-lg">
+            <div class="absolute top-4 right-4 text-purple-300">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                class="h-10 w-10"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 9 7.558V11a1 1 0 0 0 1 1h2Zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612c0-.351.021-.703.062-1.054.062-.372.166-.703.31-.992.145-.29.331-.517.559-.683.227-.186.516-.279.868-.279V3c-.579 0-1.085.124-1.52.372a3.322 3.322 0 0 0-1.085.992 4.92 4.92 0 0 0-.62 1.458A7.712 7.712 0 0 0 3 7.558V11a1 1 0 0 0 1 1h2Z"
+                />
+              </svg>
+            </div>
+            <div class="mb-4 flex items-center">
+              <div
+                class="mr-4 flex h-14 w-14 items-center justify-center rounded-full bg-pink-500 text-xl font-bold text-white"
+              >
+                MK
+              </div>
+              <div>
+                <h4 class="text-lg font-semibold text-gray-800">Maya K.</h4>
+                <p class="text-sm text-gray-500">Age 16</p>
+              </div>
+            </div>
+            <p class="mb-4 text-sm leading-relaxed text-gray-600">
+              "I love that I can talk about what's bothering me without worrying
+              about being judged. The breathing exercises have really helped
+              with my panic attacks."
+            </p>
+            <div class="flex items-center" data-rating="4">
+              {/* Stars will be generated by JS */}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section
+      id="faq"
+      class="scroll-mt-6 bg-white py-16 md:scroll-mt-3 md:py-24"
+    >
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <span
+          class="mb-3 inline-block rounded-full bg-purple-100 px-4 py-1 text-sm font-semibold text-purple-700"
+        >
+          FAQ
+        </span>
+        <h2 class="mb-4 text-3xl font-bold text-gray-800 md:text-4xl">
+          Frequently Asked Questions
+        </h2>
+        <p class="mx-auto mb-12 max-w-2xl text-lg text-gray-600 md:mb-16">
+          Answers to common questions about our AI CyberSafe Therapist.
+        </p>
+        <div class="mx-auto max-w-2xl space-y-4 text-left">
+          <!-- Question 1 -->
+          <div
+            class="faq-item cursor-pointer rounded-xl bg-gray-50 px-5 py-[15px] shadow transition-transform duration-200 hover:scale-[1.02]"
+          >
+            <button
+              type="button"
+              class="faq-toggle flex w-full items-center justify-between text-base font-medium text-gray-800 focus:outline-none"
+            >
+              <span>Is my conversation private and secure?</span>
+              <svg
+                class="faq-icon h-6 w-6 cursor-pointer text-purple-600 transition-transform duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="faq-answer mt-2 hidden text-gray-600">
+              Yes! Your conversations are private and encrypted. We do not store
+              personal data or share your information with anyone.
+            </div>
+          </div>
+          <!-- Question 2 -->
+          <div
+            class="faq-item cursor-pointer rounded-xl bg-gray-50 px-5 py-[15px] shadow transition-transform duration-200 hover:scale-[1.02]"
+          >
+            <button
+              type="button"
+              class="faq-toggle flex w-full items-center justify-between text-base font-medium text-gray-800 focus:outline-none"
+            >
+              <span>How does the AI provide support?</span>
+              <svg
+                class="faq-icon h-6 w-6 cursor-pointer text-purple-600 transition-transform duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="faq-answer mt-2 hidden text-gray-600">
+              Our AI uses evidence-based strategies to offer guidance, coping
+              tips, and resources tailored to your needs.
+            </div>
+          </div>
+          <!-- Question 3 -->
+          <div
+            class="faq-item cursor-pointer rounded-xl bg-gray-50 px-5 py-[15px] shadow transition-transform duration-200 hover:scale-[1.02]"
+          >
+            <button
+              type="button"
+              class="faq-toggle flex w-full items-center justify-between text-base font-medium text-gray-800 focus:outline-none"
+            >
+              <span>Can I use CyberSafe Therapy anytime?</span>
+              <svg
+                class="faq-icon h-6 w-6 cursor-pointer text-purple-600 transition-transform duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="faq-answer mt-2 hidden text-gray-600">
+              Yes, our AI is available 24/7 so you can get support whenever you
+              need it—day or night.
+            </div>
+          </div>
+          <!-- Question 4 -->
+          <div
+            class="faq-item cursor-pointer rounded-xl bg-gray-50 px-5 py-[15px] shadow transition-transform duration-200 hover:scale-[1.02]"
+          >
+            <button
+              type="button"
+              class="faq-toggle flex w-full items-center justify-between text-base font-medium text-gray-800 focus:outline-none"
+            >
+              <span
+                >Is CyberSafe Therapy a replacement for a human therapist?</span
+              >
+              <svg
+                class="faq-icon h-6 w-6 cursor-pointer text-purple-600 transition-transform duration-200"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="faq-answer mt-2 hidden text-gray-600">
+              No, CyberSafe Therapy is designed to provide support and
+              resources, but it is not a substitute for professional mental
+              health care.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer
+      id="contact"
+      class="scroll-mt-6 bg-gray-800 py-12 text-gray-300 md:scroll-mt-3"
+    >
+      <div class="container mx-auto px-4 text-center sm:px-6 lg:px-8">
+        <div class="mb-4 flex items-center justify-center">
+          <span class="text-xl font-semibold text-white"
+            >Cyber<span
+              class="bg-linear-to-r from-indigo-700 to-purple-600 bg-clip-text text-transparent"
+              >Safe</span
+            ></span
+          >
+        </div>
+
+        <!-- Quick Links for large screens -->
+        <nav
+          class="mb-8 hidden justify-center space-x-8 text-base font-semibold lg:flex"
+        >
+          <a href="#home" class="transition hover:text-purple-400">Home</a>
+          <a href="#features" class="transition hover:text-purple-400"
+            >Features</a
+          >
+          <a href="#how-it-works" class="transition hover:text-purple-400"
+            >How It Works</a
+          >
+          <a href="#chat-now" class="transition hover:text-purple-400"
+            >Chat Now</a
+          >
+          <a href="#resources" class="transition hover:text-purple-400"
+            >Resources</a
+          >
+          <a href="#testimonials" class="transition hover:text-purple-400"
+            >Testimonials</a
+          >
+          <a href="#faq" class="transition hover:text-purple-400">FAQ</a>
+          <a href="#contact" class="transition hover:text-purple-400"
+            >Contact</a
+          >
+        </nav>
+        <nav class="mb-6 flex flex-wrap justify-center space-x-6">
+          <a href="#" class="hover:text-purple-400">Privacy Policy</a>
+          <a href="#" class="hover:text-purple-400">Terms of Service</a>
+          <a href="#" class="hover:text-purple-400">Contact Us</a>
+        </nav>
+        <p class="text-sm">
+          &copy; 2024 CyberSafe. All rights reserved. Your mental wellness
+          partner.
+        </p>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button
+      id="backToTop"
+      class="fixed right-6 bottom-6 z-50 hidden h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-indigo-700 to-purple-600 text-white shadow-lg transition hover:scale-110 hover:bg-purple-700 lg:flex"
+      aria-label="Back to top"
+      type="button"
+    >
+      <svg
+        class="mx-auto h-7 w-7"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="3"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M5 15l7-7 7 7"
+        />
+      </svg>
+    </button>
+
+    <script src="./src/landing-page.ts" type="module"></script>
   </body>
 </html>

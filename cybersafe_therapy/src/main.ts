@@ -81,7 +81,7 @@ function loadHistory() {
     "Hello! I'm your AI therapist. How can I help you feel safer online today?";
   chatWindow.insertAdjacentHTML(
     "beforeend",
-    `<div class="model"><p>${modelInitChat}</p></div>`,
+    `<div class="model js_model"><p>${modelInitChat}</p></div>`,
   );
 
   // Render all messages
@@ -110,7 +110,7 @@ async function main() {
   const chatWindow = document.querySelector(".js_chat_window .js_chat")!;
   chatWindow.insertAdjacentHTML(
     "beforeend",
-    `<div class="user"><p>${userMessage}</p></div>`,
+    `<div class="user js_user"><p>${userMessage}</p></div>`,
   );
 
   // Show only the loader while waiting for the model's response
