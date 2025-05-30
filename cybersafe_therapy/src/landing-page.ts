@@ -46,6 +46,82 @@ function initResourceTabs() {
   });
 }
 
+const initSwirl = () => {
+  const canvas = document.getElementById("heroCanvas") as HTMLCanvasElement;
+  if (!canvas) return;
+  const ctx = canvas.getContext("2d")!;
+  if (!ctx) return;
+
+  function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height =
+      document.querySelector(".hero-section")?.clientHeight || 400;
+  }
+  resizeCanvas();
+  window.addEventListener("resize", resizeCanvas);
+
+  // Swirl particle parameters
+  const swirlCount = 32;
+  const colors = [
+    "#a5b4fc",
+    "#c4b5fd",
+    "#818cf8",
+    "#f472b6",
+    "#facc15",
+    "#4f46e5",
+  ];
+  let t = 0;
+
+  // Each particle will have its own center, base radius, and phase offset
+  const particles = Array.from({ length: swirlCount }, () => {
+    // Distribute centers across the entire canvas (full width and height)
+    const centerX = Math.random() * canvas.width;
+    const centerY = Math.random() * canvas.height;
+    const baseRadius = Math.random() * 80 + 60;
+    const phase = Math.random() * Math.PI * 2;
+    return { centerX, centerY, baseRadius, phase };
+  });
+
+  function drawSwirl() {
+    // Clear, then draw gradient background
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.save();
+    const gradient = ctx.createLinearGradient(
+      0,
+      0,
+      canvas.width,
+      canvas.height,
+    );
+    gradient.addColorStop(0, "#4f46e5"); // indigo-600
+    gradient.addColorStop(1, "#a21caf"); // purple-700
+    ctx.fillStyle = gradient;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.restore();
+
+    // Animate each particle in a swirling orbit around its own center
+    for (let i = 0; i < swirlCount; i++) {
+      const p = particles[i];
+      // Animate angle and radius for a lively effect
+      const angle = t * (0.7 + 0.3 * Math.sin(i)) + p.phase;
+      const r = p.baseRadius * (0.7 + 0.3 * Math.sin(t + i));
+      const x = p.centerX + r * Math.cos(angle);
+      const y = p.centerY + r * Math.sin(angle);
+      ctx.beginPath();
+      ctx.arc(x, y, 16, 0, 2 * Math.PI);
+      ctx.fillStyle = colors[i % colors.length];
+      ctx.globalAlpha = 0.7;
+      ctx.shadowColor = colors[(i + 1) % colors.length];
+      ctx.shadowBlur = 16;
+      ctx.fill();
+      ctx.globalAlpha = 1;
+      ctx.shadowBlur = 0;
+    }
+    t += 0.012;
+    requestAnimationFrame(drawSwirl);
+  }
+  drawSwirl();
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   // Toggle Menu
   initToggle();
@@ -265,4 +341,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Scroll to top on click
   document.getElementById("backToTop")!.onclick = () =>
     window.scrollTo({ top: 0, behavior: "smooth" });
+  initSwirl();
 });
