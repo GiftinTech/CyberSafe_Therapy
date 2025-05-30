@@ -151,7 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Star Ratings for Testimonials
   const testimonialCards = document.querySelectorAll(
-    '.grid.md\\:grid-cols-3.gap-8.md\\:gap-12 > div[class*="bg-white"]',
+    '.grid.md\\:grid-cols-3.gap-8.md\\:gap-5.lg\\:gap-12 > div[class*="bg-white"]',
   ) as NodeListOf<HTMLDivElement>;
 
   testimonialCards.forEach((card) => {

@@ -16,23 +16,25 @@
   </head>
   <body class="landing-page-body text-gray-800">
     <!-- Header Section -->
-    <header class="sticky top-0 z-50 h-20 bg-white shadow-sm">
-      <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="flex items-center justify-between">
-          <div class="flex items-center">
+    <header class="sticky top-0 z-50 h-18 bg-white py-4 shadow-sm">
+      <div class="container mx-auto pr-4 sm:px-6 lg:px-8">
+        <div
+          class="flex items-center justify-between lg:flex lg:justify-evenly"
+        >
+          <div class="flex flex-shrink-0 items-center space-x-2">
             <img
-              class="-mt-4 h-24 w-30"
+              class="h-10 w-auto sm:h-12"
               src="/img/brand-logo.png"
               alt="CyberSafe Therapy Logo"
             />
-            <span class="-ml-6 text-2xl font-bold text-black"
+            <span class="-ml-4 text-[16px] font-bold text-black sm:text-2xl"
               >Cyber<span
                 class="bg-linear-to-r from-indigo-700 to-purple-600 bg-clip-text text-transparent"
                 >Safe</span
               ></span
             >
           </div>
-          <nav class="mx-2 hidden items-center space-x-4 sm:space-x-2 md:flex">
+          <nav class="mx-2 hidden items-center space-x-4 sm:space-x-2 lg:flex">
             <a
               href="#home"
               class="nav-link text-md rounded-md px-3 py-2 font-medium text-gray-600 hover:text-purple-600 sm:text-[14px]"
@@ -76,14 +78,14 @@
               >Contact</a
             >
           </nav>
-          <div>
+          <div class="justify-center lg:justify-end">
             <a
-              href="./landing-page.html"
-              class="p-2.5hover:bg-purple-700 rounded-3xl bg-linear-to-r from-indigo-700 to-purple-600 px-6 py-2 font-semibold text-white shadow-md transition duration-150 ease-in-out"
+              href="chat.html"
+              class="rounded-3xl bg-linear-to-r from-indigo-700 to-purple-600 p-2.5 px-6 py-2 font-semibold text-white shadow-md transition duration-150 ease-in-out hover:bg-purple-700"
               >Get Started</a
             >
           </div>
-          <div class="md:hidden">
+          <div class="flex flex-shrink-0 items-center lg:hidden">
             <button
               type="button"
               id="hamburger-button"
@@ -97,7 +99,7 @@
           </div>
           <div
             id="mobile-menu"
-            class="animate-open-menu absolute top-20 right-0 hidden h-auto w-1/2 origin-top cursor-pointer flex-col items-start bg-white py-10 pl-4"
+            class="animate-open-menu absolute top-[72px] right-0 hidden h-auto w-1/2 origin-top cursor-pointer flex-col items-start bg-white py-10 pl-4"
           >
             <nav class="flex flex-col items-start gap-4">
               <a
@@ -151,7 +153,7 @@
     <!-- Hero Section -->
     <section
       id="home"
-      class="hero-section relative scroll-mt-20 py-20 text-white md:py-32 md:pt-20 md:pl-20"
+      class="hero-section relative scroll-mt-20 py-20 text-white md:py-32 md:pt-20 lg:pl-20"
     >
       <canvas id="heroCanvas"></canvas>
       <div
@@ -172,17 +174,17 @@
             teens and young adults. Talk about anything, anytime.
           </p>
           <div
-            class="flex flex-col justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4 md:justify-start"
+            class="flex flex-col justify-center space-y-4 sm:space-y-2 sm:space-x-4 md:justify-start lg:flex-row"
           >
             <button
               class="rounded-lg bg-white px-8 py-4 text-lg font-semibold text-purple-600 shadow-lg transition duration-150 hover:bg-gray-100"
             >
-              Start Chatting Now
+              <a href="chat.html">Start Chatting Now</a>
             </button>
             <button
               class="rounded-lg border-2 border-white bg-transparent px-8 py-4 text-lg font-semibold text-white transition duration-150 hover:bg-white/10"
             >
-              Learn How It Works
+              <a href="#how-it-works">Learn How It Works</a>
             </button>
           </div>
           <div class="mt-5 flex flex-row">
@@ -197,7 +199,7 @@
               AL
             </div>
             <div
-              class="mr-8 flex h-9 w-9 items-center justify-center rounded-full bg-pink-500 text-[12px] font-bold text-white"
+              class="mr-8 flex h-9 w-9 items-center justify-center rounded-full bg-pink-500 text-[12px] font-bold text-white sm:mr-5"
             >
               MK
             </div>
@@ -363,7 +365,7 @@
               data and everything is encrypted.
             </p>
             <a
-              href="#"
+              href="#faq"
               class="font-medium text-purple-600 transition duration-150 hover:text-purple-800"
               >Learn about our privacy &rarr;</a
             >
@@ -397,7 +399,7 @@
               waiting lists.
             </p>
             <a
-              href="#"
+              href="chat.html"
               class="font-medium text-purple-600 transition duration-150 hover:text-purple-800"
               >Start chatting now &rarr;</a
             >
@@ -433,7 +435,7 @@
               and digital wellness.
             </p>
             <a
-              href="#"
+              href="#resources"
               class="font-medium text-purple-600 transition duration-150 hover:text-purple-800"
               >Our approach &rarr;</a
             >
@@ -463,7 +465,7 @@
           makes mental wellness support accessible, private, and tailored to
           your needs.
         </p>
-        <div class="grid gap-8 md:grid-cols-3 md:gap-12">
+        <div class="grid gap-8 md:grid-cols-3 md:gap-5 lg:gap-12">
           <div
             class="rounded-xl bg-gray-50 p-8 shadow-lg transition-shadow duration-300 hover:shadow-xl"
           >
@@ -573,7 +575,7 @@
           for young people.
         </p>
         <div
-          class="mx-auto flex min-h-[280px] w-full max-w-4xl flex-col gap-0 overflow-hidden rounded-xl lg:flex-row"
+          class="mx-auto flex min-h-[280px] w-full max-w-4xl flex-col gap-0 overflow-hidden rounded-xl sm:flex-row"
         >
           <!-- New Info Div -->
           <div
@@ -676,8 +678,8 @@
                   class="chat-bubble-assistant ml-3 max-w-md rounded-lg rounded-tl-none p-3"
                 >
                   <p class="text-sm">
-                    Hi there! I'm your CyberSafe assistant. How are you feeling
-                    today?
+                    Hello! I'm your CyberSafe therapist. How are you and how can
+                    I help you feel safer online today?
                   </p>
                 </div>
               </div>
@@ -753,7 +755,7 @@
         <button
           class="cursor-pointer rounded-lg bg-linear-to-r from-indigo-700 to-purple-600 px-10 py-4 text-lg font-semibold text-white shadow-lg transition duration-150 hover:bg-purple-700"
         >
-          Start Chatting Now
+          <a href="chat.html">Start Chatting Now</a>
         </button>
       </div>
     </section>
@@ -830,7 +832,7 @@
             </div>
           </div>
           <div
-            class="grid gap-8 text-left md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+            class="grid gap-8 text-left md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-12"
           >
             <div
               class="rounded-xl bg-gray-50 p-6 shadow-lg transition-shadow duration-300 hover:shadow-xl"
@@ -960,7 +962,7 @@
         <!-- Articles & Guides Tab -->
         <div id="tab-articles" class="tab-content hidden">
           <div
-            class="grid gap-8 text-left md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+            class="grid gap-8 text-left md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-12"
           >
             <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
               <h3 class="mb-2 text-lg font-semibold text-gray-800">
@@ -1013,7 +1015,7 @@
         <!-- Self-Help Tools Tab -->
         <div id="tab-selfhelp" class="tab-content hidden">
           <div
-            class="grid gap-8 text-left md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+            class="grid gap-8 text-left md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-12"
           >
             <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
               <h3 class="mb-2 text-lg font-semibold text-gray-800">
@@ -1065,7 +1067,7 @@
         <!-- Community Support Tab -->
         <div id="tab-community" class="tab-content hidden">
           <div
-            class="grid gap-8 text-left md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+            class="grid gap-8 text-left md:grid-cols-2 md:gap-5 lg:grid-cols-3 lg:gap-12"
           >
             <div class="rounded-xl bg-gray-50 p-6 shadow-lg">
               <h3 class="mb-2 text-lg font-semibold text-gray-800">
@@ -1134,7 +1136,7 @@
           Hear from others who have used CyberSafe to support their mental
           wellness journey.
         </p>
-        <div class="grid gap-8 md:grid-cols-3 md:gap-12">
+        <div class="grid gap-8 md:grid-cols-3 md:gap-5 lg:gap-12">
           <div class="relative rounded-xl bg-white p-8 text-left shadow-lg">
             <div class="absolute top-4 right-4 text-purple-300">
               <svg
@@ -1348,7 +1350,7 @@
               type="button"
               class="faq-toggle flex w-full items-center justify-between text-base font-medium text-gray-800 focus:outline-none"
             >
-              <span
+              <span class="text-left"
                 >Is CyberSafe Therapy a replacement for a human therapist?</span
               >
               <svg
