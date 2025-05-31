@@ -78,32 +78,27 @@
   color: whitesmoke;
   border-radius: 0.75rem;
   border-bottom-right-radius: 0;
-  padding: 0.75rem;
+  padding: 0.25rem 0.75rem;
   font-size: 0.95rem;
   text-align: right;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.04);
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
   max-width: 80%;
 }
 
 /* Model (AI) message style */
 .model {
   align-self: flex-start;
-  background: #ede9fe; /* Tailwind's bg-purple-100 */
-  color: #6d28d9; /* Tailwind's text-purple-700 */
-  border-radius: 0.75rem; /* rounded-lg */
-  border-top-left-radius: 0; /* rounded-tl-none */
-  padding: 0.75rem; /* p-3 */
+  background: #ede9fe;
+  color: #6d28d9;
+  border-radius: 0.75rem;
+  border-top-left-radius: 0;
+  padding: 0.25rem 0.75rem;
   font-size: 0.95rem;
   text-align: left;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.08);
-  margin-top: 0.25rem;
-  margin-bottom: 0.25rem;
   max-width: 80%;
 }
 
-/* Modern, catchy textarea */
 .user-input {
   background: #f3f4f6;
   border: 2px solid #4f46e5;
@@ -136,7 +131,6 @@
   scrollbar-width: none;
 }
 
-/* Modern, catchy send button */
 .send-button {
   background: linear-gradient(90deg, #6d28d9 0%, #4f46e5 100%);
   border: 2px solid #4f46e5;
@@ -153,7 +147,7 @@
 }
 .send-button:hover,
 .send-button:focus {
-  transform: scale(1.05);
+  transform: scale(1);
   box-shadow: 0 0 0 1px #c7d2fe;
 }
 .send-button img {
@@ -175,7 +169,7 @@
   display: inline-block;
   width: 30px;
   aspect-ratio: 4;
-  background: radial-gradient(circle closest-side, #000 90%, #0000) 0 /
+  background: radial-gradient(circle closest-side, #3730a3 90%, #0000) 0 /
     calc(100% / 3) 100% space;
   clip-path: inset(0 100% 0 0);
   animation: l1 1s steps(4) infinite;
@@ -227,6 +221,9 @@ body.dark,
   background: #6366f1;
   color: #f3f4f6;
 }
+.dark .chat .model {
+  color: #272269;
+}
 .dark .user_input_area {
   background: #23243a;
 }
@@ -257,7 +254,6 @@ body.dark,
   background-color: #f3f4f6 !important;
 }
 
-/* 2. Make header text white in dark mode */
 .dark header,
 .dark header * {
   color: #d4cece !important;
@@ -266,18 +262,15 @@ body.dark,
   background-color: #23243a !important;
 }
 
-/* 3. Make nav-active a suitable color in dark mode */
 .dark .nav-active {
-  color: #a5b4fc !important; /* light indigo for contrast */
+  color: #a5b4fc !important;
   font-weight: 700;
 }
 
-/* Hide brand-logo in header in dark mode */
 .dark header .flex-shrink-0 img[alt="CyberSafe Therapy Logo"] {
   display: none !important;
 }
 
-/* Keep gradient for 'Safe' span in header in all modes */
 header .bg-linear-to-r.bg-clip-text.text-transparent {
   background: linear-gradient(to right, #4f46e5, #a21caf) !important;
   -webkit-background-clip: text !important;
@@ -285,13 +278,15 @@ header .bg-linear-to-r.bg-clip-text.text-transparent {
   color: transparent !important;
 }
 
-/* Make header text white in dark mode */
 .dark header span,
 .dark header .text-black {
   color: #fff !important;
 }
 
-/* Chat bubble heading adjustments for dark mode */
+.dark header {
+  padding-left: 30px;
+}
+
 .dark .chat-bubble-assistant h3 span:not(.bg-linear-to-r),
 .dark .chat-bubble-user h3 span:not(.bg-linear-to-r),
 .dark .chat-bubble-assistant .text-purple-700:not(.bg-linear-to-r),
@@ -305,13 +300,11 @@ header .bg-linear-to-r.bg-clip-text.text-transparent {
   color: #fff !important;
 }
 
-/* Also for inline 'AI' and 'Cyber' in chat bubbles */
 .dark .chat-bubble-assistant span:not(.bg-linear-to-r),
 .dark .chat-bubble-user span:not(.bg-linear-to-r) {
   color: #fff !important;
 }
 
-/* Make 'Cyber' and 'AI' in chat headings white in dark mode, but keep 'Safe' gradient */
 .dark .chat-bubble-assistant h3.text-gray-700,
 .dark .chat-bubble-user h3.text-gray-700,
 .dark .hero-section h3.text-gray-700,
@@ -319,7 +312,6 @@ header .bg-linear-to-r.bg-clip-text.text-transparent {
   color: #fff !important;
 }
 
-/* Hamburger button icon lines white in dark mode, no background */
 .dark #hamburger-button > div,
 .dark #hamburger-button > div::before,
 .dark #hamburger-button > div::after {
@@ -343,25 +335,24 @@ header .bg-linear-to-r.bg-clip-text.text-transparent {
   fill: #23243a;
 }
 
-/* Resource tab button styles for blue theme */
 .resource-tab-btn {
   border-width: 0 !important;
 }
 .resource-tab-btn {
-  border-color: #1e40af !important; /* blue-700 */
-  color: #1e3a8a !important; /* blue-800 */
+  border-color: #f3e8ff !important;
+  color: #6c21d7 !important;
   background: transparent;
   transition:
     background 0.15s,
     color 0.15s;
 }
 .resource-tab-btn.tab-active {
-  background: #1e40af !important; /* blue-700 */
+  background: #6202c9 !important;
   color: #fff !important;
-  border-radius: 0.75rem !important; /* rounded-lg */
+  border-radius: 0.75rem !important;
   box-shadow: 0 2px 8px 0 rgb(30 64 175 / 0.08);
 }
 .resource-tab-btn.tab-inactive:hover {
-  background: #dbeafe !important; /* blue-50 */
-  color: #1e40af !important;
+  background: #dbeafe !important;
+  color: #6c21d7 !important;
 }

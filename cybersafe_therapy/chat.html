@@ -8,85 +8,112 @@
     <meta name="description" content="An AI powered CyberSafe Therapist" />
     <title>CyberSafe AI Therapy</title>
   </head>
-  <body class="mt-12 flex w-full flex-col items-center">
+  <body class="flex w-full flex-col items-center sm:pt-[100px]">
     <section
-      class="chat_window js_chat_window flex w-full max-w-lg flex-col gap-3 rounded-xl bg-white p-6 shadow-lg"
+      class="chat_window js_chat_window flex h-dvh w-full max-w-lg flex-col items-center justify-between bg-white p-5 shadow-lg sm:my-6 sm:h-[80vh] sm:max-w-2xl sm:rounded-xl md:h-[70vh] md:max-w-3xl lg:h-[60vh] lg:max-w-4xl"
     >
-      <div class="mb-4 flex items-center justify-between">
-        <button
-          class="js_close_button rounded bg-red-500 px-3 py-1 font-semibold text-white transition hover:bg-red-600"
-        >
-          <a href="index.html">End Session</a>
-        </button>
-        <button
-          class="clear_button js_clear_button rounded bg-gray-200 px-3 py-1 font-semibold text-gray-700 transition hover:bg-gray-300"
-        >
-          Clear Chat
-        </button>
-        <button
-          id="theme-toggle"
-          aria-label="Toggle dark mode"
-          class="ml-2 rounded-full bg-gray-200 p-2 text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none"
-        >
-          <svg
-            id="theme-toggle-light-icon"
-            class="hidden h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
+      <div class="flex w-full flex-1 flex-col justify-between">
+        <div class="mb-4 flex items-center justify-between">
+          <button
+            class="js_close_button rounded bg-red-500 px-3 py-1 font-semibold text-white transition hover:bg-red-600"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M12 3v1m0 16v1m8.66-8.66l-.71.71M4.05 4.05l-.71.71M21 12h-1M4 12H3m16.95 7.95l-.71-.71M4.05 19.95l-.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-            />
-          </svg>
-          <svg
-            id="theme-toggle-dark-icon"
-            class="hidden h-6 w-6"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            viewBox="0 0 24 24"
+            <a href="index.html">End Session</a>
+          </button>
+          <button
+            class="clear_button js_clear_button rounded bg-gray-200 px-3 py-1 font-semibold text-gray-700 transition hover:bg-gray-300"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
-            />
-          </svg>
-        </button>
+            Clear Chat
+          </button>
+          <button
+            id="theme-toggle"
+            aria-label="Toggle dark mode"
+            class="ml-2 cursor-pointer rounded-full bg-gray-200 p-2 text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+          >
+            <svg
+              id="theme-toggle-light-icon"
+              class="hidden h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle
+                cx="12"
+                cy="12"
+                r="5"
+                stroke="currentColor"
+                stroke-width="2"
+                fill="none"
+              />
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M12 3v2m0 14v2m9-9h-2M5 12H3m16.07 7.07l-1.41-1.41M6.34 6.34L4.93 4.93m12.73 0l-1.41 1.41M6.34 17.66l-1.41 1.41"
+              />
+            </svg>
+            <svg
+              id="theme-toggle-dark-icon"
+              class="hidden h-4 w-4"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          class="chat js_chat chat-scroll flex max-h-[50vh] flex-col gap-2 overflow-y-auto px-1 sm:max-h-[60vh] sm:gap-3 sm:px-0 md:max-h-[50vh] lg:max-h-full"
+        >
+          <div class="js_model model">
+            <p>
+              Hello! I'm your AI therapist. How can I help you feel safer online
+              today?
+            </p>
+          </div>
+          <div class="loader js_loader"></div>
+        </div>
       </div>
       <div
-        class="chat js_chat chat-scroll flex max-h-96 flex-col gap-3 overflow-y-auto"
+        class="user_input_area js_input_area flex w-full max-w-lg items-center border-none p-0 shadow-none sm:p-0"
+        style="z-index: 20"
       >
-        <div class="js_model model">
-          <p>
-            Hello! I'm your AI therapist. How can I help you feel safer online
-            today?
-          </p>
-        </div>
-        <div class="loader js_loader"></div>
-      </div>
-      <div class="user_input_area mt-2 flex w-full items-start">
         <textarea
-          class="js-user-input user-input scrollbar-hide flex-1 resize-none rounded-l-full rounded-r-none bg-gray-100 px-3 text-base focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+          class="js-user-input user-input scrollbar-hide flex-grow resize-none rounded-l-full rounded-r-none border-none bg-transparent px-2 text-sm focus:ring-2 focus:ring-indigo-400 focus:outline-none sm:px-3 sm:text-base"
           placeholder="Type your message..."
           rows="1"
-          style="min-height: 2.5rem; max-height: 6rem; overflow-y: auto"
+          style="
+            min-height: 2.5rem;
+            max-height: 6rem;
+            overflow-y: auto;
+            width: 100%;
+          "
         ></textarea>
         <button
-          class="js-send-button send-button flex h-12 w-12 items-center justify-center rounded-l-none rounded-r-full bg-indigo-500 text-white shadow-md transition hover:bg-indigo-600"
+          class="js-send-button send-button ml-2 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-l-none rounded-r-full border-none bg-indigo-500 text-white shadow-none transition hover:bg-indigo-600 sm:h-12 sm:w-12"
+          style="
+            width: 3rem;
+            min-width: 3rem;
+            max-width: 4rem;
+            height: 2.5rem;
+            min-height: 2.5rem;
+            max-height: 3rem;
+          "
         >
           <img
             src="/img/send-icon.png"
             alt="send"
             style="
-              width: 1.5rem;
-              height: 1.5rem;
-              min-width: 1.5rem;
-              min-height: 1.5rem;
+              width: 1.3rem;
+              height: 1.3rem;
+              min-width: 1.3rem;
+              min-height: 1.3rem;
               max-width: 1.5rem;
               max-height: 1.5rem;
             "

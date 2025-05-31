@@ -56,12 +56,18 @@ if (themeToggle) {
     // Broadcast theme change to opener (index.html) or child (chat.html)
     if (window.opener && !window.opener.closed) {
       try {
-        window.opener.postMessage({ type: "theme", theme: getPreferredTheme() }, "*");
+        window.opener.postMessage(
+          { type: "theme", theme: getPreferredTheme() },
+          "*",
+        );
       } catch (e) {}
     }
     if ((window as any).chatWindow && !(window as any).chatWindow.closed) {
       try {
-        (window as any).chatWindow.postMessage({ type: "theme", theme: getPreferredTheme() }, "*");
+        (window as any).chatWindow.postMessage(
+          { type: "theme", theme: getPreferredTheme() },
+          "*",
+        );
       } catch (e) {}
     }
   });
@@ -140,7 +146,6 @@ async function main() {
   // Show only the loader while waiting for the model's response
   const loader = document.createElement("span");
   loader.className = "loader js_loader";
-  loader.textContent = "..."; // Optional: for visibility
   chatWindow.appendChild(loader);
   chatWindow.scrollTop = chatWindow.scrollHeight;
 
