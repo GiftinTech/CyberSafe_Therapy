@@ -46,6 +46,7 @@ function initResourceTabs() {
   });
 }
 
+// Floating Bubbles in Hero section
 const initSwirl = () => {
   const canvas = document.getElementById("heroCanvas") as HTMLCanvasElement;
   if (!canvas) return;
@@ -122,9 +123,72 @@ const initSwirl = () => {
   drawSwirl();
 };
 
+// Theme toggle logic for both index.html and chat.html
+function setTheme(theme: string) {
+  if (theme === "dark") {
+    document.documentElement.classList.add("dark");
+    document.body.classList.add("dark");
+  } else {
+    document.documentElement.classList.remove("dark");
+    document.body.classList.remove("dark");
+  }
+  localStorage.setItem("theme", theme);
+  const lightIcon = document.getElementById(
+    "theme-toggle-light-icon",
+  ) as HTMLElement;
+  const darkIcon = document.getElementById(
+    "theme-toggle-dark-icon",
+  ) as HTMLElement;
+  if (lightIcon && darkIcon) {
+    lightIcon.style.display = theme === "dark" ? "block" : "none";
+    darkIcon.style.display = theme === "dark" ? "none" : "block";
+  }
+}
+
+function getPreferredTheme(): string {
+  return (
+    localStorage.getItem("theme") ||
+    (window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light")
+  );
+}
+
+function toggleTheme() {
+  const current = getPreferredTheme();
+  setTheme(current === "dark" ? "light" : "dark");
+  // Cross-window sync
+  if (window.opener && !window.opener.closed) {
+    try {
+      window.opener.postMessage(
+        { type: "theme", theme: localStorage.getItem("theme") },
+        "*",
+      );
+    } catch (e) {}
+  }
+  if ((window as any).chatWindow && !(window as any).chatWindow.closed) {
+    try {
+      (window as any).chatWindow.postMessage(
+        { type: "theme", theme: localStorage.getItem("theme") },
+        "*",
+      );
+    } catch (e) {}
+  }
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   // Toggle Menu
   initToggle();
+
+  // Get preferred theme on DOM loaded
+  setTheme(getPreferredTheme());
+  const themeToggle = document.getElementById("theme-toggle");
+  if (themeToggle) {
+    themeToggle.addEventListener("click", toggleTheme);
+  }
+  window.addEventListener("message", function (e) {
+    if (e.data && e.data.type === "theme") setTheme(e.data.theme);
+  });
 
   // Canvas Animation for Hero Section
   const canvas = document.getElementById("heroCanvas") as HTMLCanvasElement;
@@ -343,3 +407,5 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   initSwirl();
 });
+
+export { setTheme, getPreferredTheme, toggleTheme };

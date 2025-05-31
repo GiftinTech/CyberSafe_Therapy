@@ -40,16 +40,16 @@
   color: #6d28d9;
   font-weight: 600;
 }
-.tab-active {
+/* .tab-active {
   background-color: #ede9fe;
   color: #6d28d9;
   border-color: #6d28d9;
 }
 .tab-inactive {
   background-color: white;
-  color: #6b7280;
+  color: #6c5ce7;
   border-color: #d1d5db;
-}
+} */
 .star-filled {
   fill: #fbbf24;
 }
@@ -184,4 +184,184 @@
   to {
     clip-path: inset(0 -34% 0 0);
   }
+}
+
+body.dark,
+.dark body,
+.dark .landing-page-body {
+  background-color: #181825 !important;
+  color: whitesmoke !important;
+}
+
+.dark
+  .bg-white:not(.bg-gradient-to-br):not(.bg-linear-to-r):not(
+    [href="chat.html"]
+  ),
+.dark .bg-gray-50,
+.dark .bg-purple-50,
+.dark .bg-gray-100 {
+  background-color: #23243a !important;
+  color: whitesmoke !important;
+}
+
+.dark .border-gray-200,
+.dark .border-gray-300 {
+  border-color: #373a4d !important;
+}
+.dark .text-gray-800,
+.dark .text-gray-600 {
+  color: whitesmoke !important;
+}
+.dark .rounded-xl.bg-white {
+  background-color: #23243a !important;
+}
+.dark .chat_window {
+  background: #23243a;
+  color: whitesmoke;
+}
+.dark .chat-bubble-assistant {
+  background: #3730a3;
+  color: whitesmoke;
+}
+.dark .chat-bubble-user {
+  background: #6366f1;
+  color: #f3f4f6;
+}
+.dark .user_input_area {
+  background: #23243a;
+}
+.dark .user-input {
+  background: #23243a;
+  color: #e0e7ef;
+  border-color: #6366f1;
+}
+.dark .send-button {
+  background: linear-gradient(90deg, #6366f1 0%, #a21caf 100%);
+  border-color: #6366f1;
+}
+.dark .send-button:hover {
+  background: #a21caf;
+}
+.dark .model {
+  color: #a5b4fc;
+}
+.dark .loader {
+  border-top-color: #a5b4fc;
+}
+
+.dark .hero-section .bg-white.text-purple-600.shadow-lg {
+  background-color: #fff !important;
+  color: #7c3aed !important; /* text-purple-600 */
+}
+.dark .hero-section .bg-white.text-purple-600.shadow-lg:hover {
+  background-color: #f3f4f6 !important;
+}
+
+/* 2. Make header text white in dark mode */
+.dark header,
+.dark header * {
+  color: #d4cece !important;
+}
+.dark header .bg-white {
+  background-color: #23243a !important;
+}
+
+/* 3. Make nav-active a suitable color in dark mode */
+.dark .nav-active {
+  color: #a5b4fc !important; /* light indigo for contrast */
+  font-weight: 700;
+}
+
+/* Hide brand-logo in header in dark mode */
+.dark header .flex-shrink-0 img[alt="CyberSafe Therapy Logo"] {
+  display: none !important;
+}
+
+/* Keep gradient for 'Safe' span in header in all modes */
+header .bg-linear-to-r.bg-clip-text.text-transparent {
+  background: linear-gradient(to right, #4f46e5, #a21caf) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Make header text white in dark mode */
+.dark header span,
+.dark header .text-black {
+  color: #fff !important;
+}
+
+/* Chat bubble heading adjustments for dark mode */
+.dark .chat-bubble-assistant h3 span:not(.bg-linear-to-r),
+.dark .chat-bubble-user h3 span:not(.bg-linear-to-r),
+.dark .chat-bubble-assistant .text-purple-700:not(.bg-linear-to-r),
+.dark .chat-bubble-user .text-purple-700:not(.bg-linear-to-r),
+.dark .chat-bubble-assistant .text-indigo-700:not(.bg-linear-to-r),
+.dark .chat-bubble-user .text-indigo-700:not(.bg-linear-to-r),
+.dark .chat-bubble-assistant .text-purple-200:not(.bg-linear-to-r),
+.dark .chat-bubble-user .text-purple-200:not(.bg-linear-to-r),
+.dark .chat-bubble-assistant .text-indigo-200:not(.bg-linear-to-r),
+.dark .chat-bubble-user .text-indigo-200:not(.bg-linear-to-r) {
+  color: #fff !important;
+}
+
+/* Also for inline 'AI' and 'Cyber' in chat bubbles */
+.dark .chat-bubble-assistant span:not(.bg-linear-to-r),
+.dark .chat-bubble-user span:not(.bg-linear-to-r) {
+  color: #fff !important;
+}
+
+/* Make 'Cyber' and 'AI' in chat headings white in dark mode, but keep 'Safe' gradient */
+.dark .chat-bubble-assistant h3.text-gray-700,
+.dark .chat-bubble-user h3.text-gray-700,
+.dark .hero-section h3.text-gray-700,
+.dark #chat-now h3.text-gray-700 {
+  color: #fff !important;
+}
+
+/* Hamburger button icon lines white in dark mode, no background */
+.dark #hamburger-button > div,
+.dark #hamburger-button > div::before,
+.dark #hamburger-button > div::after {
+  background-color: #fff !important;
+  color: #fff !important;
+}
+.dark #hamburger-button {
+  background: transparent !important;
+}
+
+#hamburger-button.toggle-btn > div {
+  background: transparent !important;
+}
+#hamburger-button.toggle-btn > div::before,
+#hamburger-button.toggle-btn > div::after {
+  background-color: #fff !important;
+  color: #fff !important;
+}
+
+.dark .hero-section svg path {
+  fill: #23243a;
+}
+
+/* Resource tab button styles for blue theme */
+.resource-tab-btn {
+  border-width: 0 !important;
+}
+.resource-tab-btn {
+  border-color: #1e40af !important; /* blue-700 */
+  color: #1e3a8a !important; /* blue-800 */
+  background: transparent;
+  transition:
+    background 0.15s,
+    color 0.15s;
+}
+.resource-tab-btn.tab-active {
+  background: #1e40af !important; /* blue-700 */
+  color: #fff !important;
+  border-radius: 0.75rem !important; /* rounded-lg */
+  box-shadow: 0 2px 8px 0 rgb(30 64 175 / 0.08);
+}
+.resource-tab-btn.tab-inactive:hover {
+  background: #dbeafe !important; /* blue-50 */
+  color: #1e40af !important;
 }

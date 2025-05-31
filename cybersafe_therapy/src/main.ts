@@ -35,6 +35,7 @@
 // run();
 
 import "./tailwind.css";
+import { setTheme, getPreferredTheme, toggleTheme } from "./landing-page";
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
@@ -42,6 +43,29 @@ const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
 const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
 
 const textarea = document.querySelector(".js-user-input") as HTMLInputElement;
+
+// Theme toggle functionality
+setTheme(getPreferredTheme());
+window.addEventListener("message", function (e) {
+  if (e.data && e.data.type === "theme") setTheme(e.data.theme);
+});
+const themeToggle = document.getElementById("theme-toggle");
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    toggleTheme();
+    // Broadcast theme change to opener (index.html) or child (chat.html)
+    if (window.opener && !window.opener.closed) {
+      try {
+        window.opener.postMessage({ type: "theme", theme: getPreferredTheme() }, "*");
+      } catch (e) {}
+    }
+    if ((window as any).chatWindow && !(window as any).chatWindow.closed) {
+      try {
+        (window as any).chatWindow.postMessage({ type: "theme", theme: getPreferredTheme() }, "*");
+      } catch (e) {}
+    }
+  });
+}
 
 if (textarea) {
   textarea.focus();

@@ -207,6 +207,7 @@
           </div>
         </div>
 
+        <!-- Chat interface -->
         <div
           class="mx-auto w-full max-w-md rounded-xl bg-white p-6 shadow-2xl md:mx-0"
         >
@@ -644,6 +645,7 @@
               </li>
             </ul>
           </div>
+
           <!-- Existing Chat Demo Div -->
           <div
             class="flex-1 border border-purple-200 bg-gray-100 p-6 shadow-xl sm:p-8"
@@ -777,30 +779,32 @@
           Helpful tools, articles, and emergency contacts for Nigerian and
           African youth.
         </p>
-        <div class="mb-10 flex flex-wrap justify-center gap-2 sm:gap-4">
+        <div
+          class="mx-auto mb-10 flex w-[75%] flex-row justify-center gap-4 rounded-full bg-purple-100 py-1 sm:w-[50%] sm:gap-4 sm:py-1"
+        >
           <button
-            class="tab-active cursor-pointer rounded-lg border-2 px-4 py-2 text-sm font-medium transition duration-150 sm:px-6 sm:py-3 sm:text-base"
+            class="tab-active resource-tab-btn cursor-pointer rounded-full bg-linear-to-r from-purple-700 to-purple-500 px-4 text-sm font-medium text-white shadow transition duration-150 hover:bg-purple-700 sm:px-2 sm:text-base"
             data-tab="crisis"
           >
-            Crisis Support
+            Crisis<span class="hidden sm:inline"> Support</span>
           </button>
           <button
-            class="tab-inactive cursor-pointer rounded-lg border-2 px-4 py-2 text-sm font-medium transition duration-150 hover:border-gray-400 hover:bg-gray-100 sm:px-6 sm:py-3 sm:text-base"
+            class="tab-inactive resource-tab-btn cursor-pointer rounded-full bg-transparent px-4 text-sm font-medium text-purple-700 transition duration-150 hover:bg-purple-50 hover:text-purple-900 sm:px-2 sm:text-base"
             data-tab="articles"
           >
-            Articles & Guides
+            Articles<span class="hidden sm:inline"> & Guides</span>
           </button>
           <button
-            class="tab-inactive cursor-pointer rounded-lg border-2 px-4 py-2 text-sm font-medium transition duration-150 hover:border-gray-400 hover:bg-gray-100 sm:px-6 sm:py-3 sm:text-base"
+            class="tab-inactive resource-tab-btn cursor-pointer rounded-full bg-transparent px-4 text-sm font-medium text-purple-700 transition duration-150 hover:bg-purple-50 hover:text-purple-900 sm:px-2 sm:text-base"
             data-tab="selfhelp"
           >
-            Self-Help Tools
+            Self-Help<span class="hidden sm:inline"> Tools</span>
           </button>
           <button
-            class="tab-inactive cursor-pointer rounded-lg border-2 px-4 py-2 text-sm font-medium transition duration-150 hover:border-gray-400 hover:bg-gray-100 sm:px-6 sm:py-3 sm:text-base"
+            class="tab-inactive resource-tab-btn cursor-pointer rounded-full bg-transparent px-4 text-sm font-medium text-purple-700 transition duration-150 hover:bg-purple-50 hover:text-purple-900 sm:px-2 sm:text-base"
             data-tab="community"
           >
-            Community Support
+            Community<span class="hidden sm:inline"> Support</span>
           </button>
         </div>
 
@@ -1451,6 +1455,42 @@
       </svg>
     </button>
 
-    <script src="./src/landing-page.ts" type="module"></script>
+    // Theme toggle
+    <button
+      id="theme-toggle"
+      aria-label="Toggle dark mode"
+      class="fixed bottom-6 left-6 z-50 rounded-full bg-gray-200 p-2 text-gray-700 hover:bg-gray-300 focus:ring-2 focus:ring-indigo-400 focus:outline-none"
+    >
+      <svg
+        id="theme-toggle-light-icon"
+        class="hidden h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M12 3v1m0 16v1m8.66-8.66l-.71.71M4.05 4.05l-.71.71M21 12h-1M4 12H3m16.95 7.95l-.71-.71M4.05 19.95l-.71-.71M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+        />
+      </svg>
+      <svg
+        id="theme-toggle-dark-icon"
+        class="hidden h-6 w-6"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M21 12.79A9 9 0 1111.21 3a7 7 0 109.79 9.79z"
+        />
+      </svg>
+    </button>
+
+    <script src="/src/landing-page.ts" type="module"></script>
   </body>
 </html>
